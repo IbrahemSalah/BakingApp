@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.android.bakingapp.StepActivity">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/videoCardView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1">
+
+            <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                android:id="@+id/exoPlayerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
+
+            </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+            <ImageView
+                android:id="@+id/videoNotFoundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/novideo"
+                android:visibility="invisible"
+                app:srcCompat="@mipmap/ic_launcher"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/stepShortDesciptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="48dp"
+            android:elevation="4dp"
+            android:text="@string/default_text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/videoCardView"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1" />
+
+        <TextView
+            android:id="@+id/stepDesciptionTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/default_text"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toLeftOf="@+id/stepShortDesciptionTextView"
+            app:layout_constraintRight_toRightOf="@+id/stepShortDesciptionTextView"
+            app:layout_constraintTop_toBottomOf="@+id/stepShortDesciptionTextView"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="0dp"
+            android:onClick="nextButtonClick"
+            android:text="@string/next"
+            app:layout_constraintRight_toRightOf="@+id/stepShortDesciptionTextView"
+            app:layout_constraintTop_toBottomOf="@+id/stepDesciptionTextView" />
+
+        <Button
+            android:id="@+id/previousButton"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="0dp"
+            android:onClick="previousButtonClick"
+            android:text="@string/previous"
+            app:layout_constraintLeft_toLeftOf="@+id/stepShortDesciptionTextView"
+            app:layout_constraintTop_toBottomOf="@+id/stepDesciptionTextView" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginBottom="0dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:foregroundGravity="top"
+            android:onClick="fullScreenMode"
+            app:elevation="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/stepShortDesciptionTextView"
+            app:layout_constraintRight_toRightOf="@+id/videoCardView"
+            app:srcCompat="@drawable/ic_fullscreen_expand"
+            tools:layout_constraintRight_creator="1" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
